@@ -63,7 +63,7 @@ a {
   position: absolute;
   width: 1013px;
   height: 140px;
-  left: 48px;
+  left: 43px;
   top: -130px;
 }
 
@@ -72,7 +72,7 @@ a {
   float: left;
   width: 493px;
   height: 118px;
-  background: url(../img/loveLeft.png) no-repeat center top;
+  background: url(../img/loveLeft.png) no-repeat left top;
   text-align: center;
   padding-top: 10px
 }
@@ -91,7 +91,7 @@ a {
   padding-top: 10px;
 }
 .change_bg .lover_left {
-  background: url(../img/loveLeft2.png) no-repeat center top;
+  background: url(../img/loveLeft2.png) no-repeat left top;
 }
 .change_bg .lover_right {
   background: url(../img/loveRight2.png) no-repeat center top;
@@ -116,7 +116,7 @@ a {
 .love_first_center {
   padding-left: 24px;
   padding-right: 24px;
-  height: 690px;
+  /*height: 690px;*/
 }
 
 .love_first_center li {

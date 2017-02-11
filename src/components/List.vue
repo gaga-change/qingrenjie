@@ -10,12 +10,13 @@
         </p>
         <ul class="love_first_center">
           <li v-for="(son, index) in item.son" :class="{'love_margin' : (index+1)%4==0}">
-           <img :src="'/static/' + $route.matched[0].props.title+'/'+son.name + '.jpg'"/>
-            <p v-text="son.txt"></p>
+            <a href="son.url">
+              <img :src="'/static/' + $route.matched[0].props.title+'/'+son.name + '.jpg'"/>
+              <p v-text="son.txt"></p>
+            </a>
           </li>
         </ul>
       </div>
-
     </div>
 
   </div>
@@ -40,5 +41,7 @@
 </script>
 
 <style>
-
+  .love_first_center li:hover {
+    outline: 3px solid #ed4360;
+  }
 </style>
