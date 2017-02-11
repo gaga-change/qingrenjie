@@ -104,7 +104,7 @@
     display: block;
     position: fixed;
     top: 300px;
-    right: 147px;
+    right: 3%;
     background: url(../images/sidebar.png);
     z-index: 10;
   }
@@ -147,7 +147,7 @@
     display: block;
     margin: 0 auto;
     display: none;
-    background: url(../images/bottom-top.jpg) no-repeat;
+    background: url(../images/bottom-top.png) no-repeat;
     position: relative;
     top: -1px;
     right: -1px;

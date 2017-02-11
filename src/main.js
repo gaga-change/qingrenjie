@@ -6,10 +6,10 @@ import router from './router'
 import Sidebar from './components/Sidebar.vue'
 
 Vue.component("sidebar", Sidebar);
-/* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
   components: { App }
-})
+});

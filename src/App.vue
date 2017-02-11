@@ -1,13 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <ul>
-      <router-link to="/qiji">奇迹</router-link>
-      <router-link to="/dnf">毒奶粉</router-link>
-    </ul>
-    <hr>
-    <router-view ></router-view>
-    <router-view name="b"></router-view>
+    <!--header-->
+    <div id="lover_content_wrap">
+      <div class="lover_content">
+        <div class="banner_top"></div>
+        <div class="lover_vip">
+          <ul class="lover_vip_list" :class="{'change_bg': $route.matched[0].props.title == 'dnf'}">
+              <router-link tag="li" class="lover_left" to="/qiji"></router-link>
+              <router-link tag="li" class="lover_right" to="/dnf"></router-link>
+          </ul>
+          <router-view name="b"></router-view>
+        </div>
+      </div>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -24,13 +30,8 @@
 </script>
 
 <style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-    height: 4000px;
-  }
+  @import "css/main.css";
+  /*body{*/
+    /*min-width: 1582px;*/
+  /*}*/
 </style>
