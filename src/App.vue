@@ -9,11 +9,12 @@
               <router-link tag="li" class="lover_left" to="/qiji"></router-link>
               <router-link tag="li" class="lover_right" to="/dnf"></router-link>
           </ul>
-          <router-view name="b"></router-view>
+          <router-view></router-view>
         </div>
       </div>
     </div>
-    <router-view></router-view>
+    <router-view name="b"></router-view>
+
   </div>
 </template>
 

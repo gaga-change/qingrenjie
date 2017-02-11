@@ -72,7 +72,7 @@ a {
   float: left;
   width: 493px;
   height: 118px;
-  background: url(../img/loveLeft.png) no-repeat center center;
+  background: url(../img/loveLeft.png) no-repeat center top;
   text-align: center;
   padding-top: 10px
 }
@@ -86,15 +86,15 @@ a {
   float: right;
   width: 493px;
   height: 118px;
-  background: url(../img/loveRight.png) no-repeat center center;
+  background: url(../img/loveRight.png) no-repeat center top;
   text-align: center;
   padding-top: 10px;
 }
 .change_bg .lover_left {
-  background: url(../img/loveLeft2.png) no-repeat center center;
+  background: url(../img/loveLeft2.png) no-repeat center top;
 }
 .change_bg .lover_right {
-  background: url(../img/loveRight2.png) no-repeat center center;
+  background: url(../img/loveRight2.png) no-repeat center top;
 }
 .lover_vip_list .lover_right img {
   display: inline-block;

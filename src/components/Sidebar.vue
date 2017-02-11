@@ -77,10 +77,25 @@
 
       }
 
-      function goBack() {
+      window.goBack = function () {
+        console.log("回到顶部");
+        var tep = 0;
         var heighs = document.documentElement.scrollTop || document.body.scrollTop;
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
+        tep = heighs/100;
+        var inteval = setInterval(function () {
+          var heighs = document.documentElement.scrollTop || document.body.scrollTop;
+          console.log("gaga");
+          if(heighs < 3) {
+              console.log(heighs, heighs<3)
+              clearInterval(inteval);
+          }
+          if (document.documentElement.scrollTop) {
+
+            document.documentElement.scrollTop = document.documentElement.scrollTop - tep
+          } else {
+            document.body.scrollTop = document.body.scrollTop - tep;
+          }
+        }, 2);
       }
     }
   }
