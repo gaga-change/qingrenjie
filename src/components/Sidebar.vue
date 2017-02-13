@@ -1,35 +1,21 @@
+<!-- 固定菜单组件-->
 <template>
   <!----------------------侧边框------------------------>
-  <div class="sidebar">
+  <!--<div data-wow-iteration="2" class="span3 wow swing center"-->
+    <!--<div style="width: 200px;height: 400px;background: red;"></div>-->
+  <!--</div>-->
+  <div  data-wow-iteration="2" class="sidebar  animated swing" style="visibility: visible; animation-iteration-count: 2; animation-name: swing;">
     <p class="sidebar-hong">购买页面商品<br/>送红包</p>
     <!--<span v-text="$route"></span>-->
     <ul class="all-in-one-sidebar">
       <li v-for="item in list[$route.matched[0].props.title]">
-        <a href="#" v-text="item.name">
+        <a  v-text="item.name">
         </a>
       </li>
       <li>
-        <a href="#">联系QQ</a>
+        <a  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2602776493&site=qq&menu=yes">联系QQ</a>
       </li>
       <li>
-        <!--<a href="#">VIP区</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="#">菲利亚</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="#">纳尔斯</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="#">撒拉曼德</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="#">巴内尔特</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="#">电信1区</a>-->
-        <!--</li>-->
-
     </ul>
     <p id="goTop" class="bottom-top">
       <a class="goTop" onclick="goBack()">返回顶部</a>
@@ -40,7 +26,9 @@
 </template>
 
 <script>
+  import jQuery from 'jquery'
   import data from '../data/data.json'
+  var $ = jQuery;
   export default {
     name: "sidebar",
     data(){
@@ -78,15 +66,15 @@
       }
 
       window.goBack = function () {
-        console.log("回到顶部");
+//        console.log("回到顶部");
         var tep = 0;
         var heighs = document.documentElement.scrollTop || document.body.scrollTop;
         tep = heighs/100;
         var inteval = setInterval(function () {
           var heighs = document.documentElement.scrollTop || document.body.scrollTop;
-          console.log("gaga");
+//          console.log("gaga");
           if(heighs < 3) {
-              console.log(heighs, heighs<3)
+//              console.log(heighs, heighs<3)
               clearInterval(inteval);
           }
           if (document.documentElement.scrollTop) {
@@ -97,6 +85,22 @@
           }
         }, 2);
       }
+      function scroll(k){
+        return $(".lover_first").eq(k).position().top;
+      }
+      //console.log($scroll)
+      $(window).scroll(function(){
+        if($(window).scrollTop()-700<scroll(0)){
+          $('.all-in-one-sidebar li').removeClass('lover_click');
+        }
+        for(var k=0;k<6;k++){
+          if($(window).scrollTop()-700>scroll(k)){
+            $('.all-in-one-sidebar li').removeClass('lover_click');
+            $('.all-in-one-sidebar li').eq(k).addClass('lover_click');
+          }
+        }
+
+      })
     }
   }
 </script>
@@ -176,7 +180,75 @@
     text-align: center;
     line-height: 50px;
     color: #f3dfb2;
-
   }
+
+  /*动画效果*/
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes swing {
+    20% {
+      -webkit-transform: rotate3d(0, 0, 1, 15deg);
+      transform: rotate3d(0, 0, 1, 15deg);
+    }
+
+    40% {
+      -webkit-transform: rotate3d(0, 0, 1, -10deg);
+      transform: rotate3d(0, 0, 1, -10deg);
+    }
+
+    60% {
+      -webkit-transform: rotate3d(0, 0, 1, 5deg);
+      transform: rotate3d(0, 0, 1, 5deg);
+    }
+
+    80% {
+      -webkit-transform: rotate3d(0, 0, 1, -5deg);
+      transform: rotate3d(0, 0, 1, -5deg);
+    }
+
+    to {
+      -webkit-transform: rotate3d(0, 0, 1, 0deg);
+      transform: rotate3d(0, 0, 1, 0deg);
+    }
+  }
+
+  @keyframes swing {
+    20% {
+      -webkit-transform: rotate3d(0, 0, 1, 15deg);
+      transform: rotate3d(0, 0, 1, 15deg);
+    }
+
+    40% {
+      -webkit-transform: rotate3d(0, 0, 1, -10deg);
+      transform: rotate3d(0, 0, 1, -10deg);
+    }
+
+    60% {
+      -webkit-transform: rotate3d(0, 0, 1, 5deg);
+      transform: rotate3d(0, 0, 1, 5deg);
+    }
+
+    80% {
+      -webkit-transform: rotate3d(0, 0, 1, -5deg);
+      transform: rotate3d(0, 0, 1, -5deg);
+    }
+
+    to {
+      -webkit-transform: rotate3d(0, 0, 1, 0deg);
+      transform: rotate3d(0, 0, 1, 0deg);
+    }
+  }
+
+  .swing {
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-animation-name: swing;
+    animation-name: swing;
+  }
+
 
 </style>
