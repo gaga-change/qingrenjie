@@ -13,7 +13,7 @@
           <transition-group name="list" tag="">
             <li v-for="(son, index) in item.son" :key="son" class="list-item" :class="{'love_margin' : (index+1)%4==0}">
               <a :href="son.url" target="_blank">
-                <img :src="'/static/' + $route.matched[0].props.title+'/'+son.name + '.jpg'"/>
+                <img :src="'/test/test/' + $route.matched[0].props.title+'/'+son.name + '.jpg'"/>
                 <p v-text="son.txt"></p>
               </a>
             </li>
