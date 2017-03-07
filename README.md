@@ -1,21 +1,30 @@
-# qingrenjie2
+# 情人节活动页面
 
-> A Vue.js project
+> 使用vue实现
 
-## Build Setup
+## 技术栈
+
+* vue
+* vue-router
+
+## 构建方式
+
+使用`vue`官方推荐的[git-cli](https://github.com/vuejs/vue-cli)进行自动构建。
+
+## 运行方式
 
 ``` bash
-# install dependencies
+# 下载依赖环境
 npm install
 
-# serve with hot reload at localhost:8080
+# 运行开发环境
 npm run dev
 
-# build for production with minification
+# 打包
 npm run build
 
-# build for production and view the bundle analyzer report
+# 打包（说明）
 npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
